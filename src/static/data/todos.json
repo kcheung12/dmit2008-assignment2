@@ -1,0 +1,52 @@
+[
+    {
+        "id": "aw11f25v",
+        "category": "children",
+        "title": "Between the age of 0 and 12",
+        "isComplete": true,
+        "startDate": "Monday October 11th",
+        "startTime":"9:00am",
+        "endDate": "Monday October 11th",
+        "endTime":"9:00pm"
+    },
+    {
+        "id": "p93oo2i1",
+        "category": "teenagers",
+        "title": "Between the age of 13 and 17",
+        "isComplete": true,
+        "startDate": "Tuesday October 12th",
+        "startTime":"9:00am",
+        "endDate": "Tuesday October 12th",
+        "endTime":"9:00pm"
+    },
+    {
+        "id": "s86r32te",
+        "category": "adults",
+        "title": "Between the age of 18 and 39",
+        "isComplete": false,
+        "startDate": "Wednesday October 13th",
+        "startTime":"9:00am",
+        "endDate": "Wednesday October 13th",
+        "endTime":"9:00pm"
+    },
+    {
+        "id": "a8sze5d7",
+        "category": "middle-aged adults",
+        "title": "Between the age of 40 and 59",
+        "isComplete": false,
+        "startDate": "Thursday October 14th",
+        "startTime":"9:00am",
+        "endDate": "Thursday October 14th",
+        "endTime":"9:00pm"
+    },
+    {
+        "id": "h69sd52s",
+        "category": "seniors",
+        "title": "The age over 60",
+        "isComplete": false,
+        "startDate": "Friday October 15th",
+        "startTime":"9:00am",
+        "endDate": "Friday October 15th",
+        "endTime":"9:00pm"
+    }
+]
