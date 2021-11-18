@@ -5,11 +5,12 @@ import link from "../components/link";
 import Router from "../routes/router";
 import addlogo from "../icon/addlogo";
 import todoList from "../components/todoList/todoList";
+import button from "../components/ui/button/button";
 
 
 const onRequestNewPage = function(e){
     e.preventDefault();
-    Router(e.currentTarget.dataset.path)
+    Router('/add')
 }
 
 const toDoPage = function(){
@@ -37,7 +38,7 @@ const toDoPage = function(){
     const pageFooter = document.createElement('footer')
     const footerDiv = document.createElement('div')
     footerDiv.classList.add('footerDiv')
-    const linkElm = link(addlogo,'/add','addbutton')
+    const linkElm = button(addlogo,'addbutton')
     linkElm.addEventListener('click',onRequestNewPage)
     footerDiv.append(linkElm)
     pageFooter.append(footerDiv)

@@ -1,9 +1,12 @@
 
-.addbutton{
-    svg{
-        width: 5rem;
-        height: 5rem;
-        border: 5px solid rgb(223, 223, 223);
-        border-radius: 50px;
-    }
+
+
+button#delete-button{
+    background-color: white;
+    border:none;
+}
+
+button#edit-button{
+    background-color: white;
+    border:none;
 }
