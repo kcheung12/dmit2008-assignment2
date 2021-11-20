@@ -15,12 +15,17 @@ h1 {
     display: none;
 }
 
+h2 {
+    margin-bottom: 1rem;
+}
+
 footer {
     background-color: rgb(245, 185, 185);
     position: -webkit-sticky;
 	position: sticky;
 	bottom: 0;
 }
+
 
 .errorContent{
     margin-bottom: 5rem;

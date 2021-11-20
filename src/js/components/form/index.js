@@ -12,7 +12,7 @@ const form = function(data={}){
         <div class="row">
             <div>
                 <label>Category</label>
-                <select id="cat">
+                <select id="cat" required>
                     <option value="">[Select a Category]</option>
                     <option value="children">Children</option>
                     <option value="teenagers">Teenagers</option>
@@ -33,21 +33,21 @@ const form = function(data={}){
         <div class="row">
             <div>   
             <label>Start Date</label>
-            <input type="text" id="startDate" value="${data!=null? data.startDate:''}">
+            <input type="text" id="startDate" value="${data!=null? data.startDate:''}" placeholder="Monday January 1st">
             </div>
             <div>
             <label>Start Time</label>
-            <input type="text" id="startTime" value="${data!=null? data.startTime:''}">
+            <input type="text" id="startTime" value="${data!=null? data.startTime:''}" placeholder="00:00am">
             </div>
         </div>
         <div class="row">
             <div>
             <label>End Date</label>
-            <input type="text" id="endDate" value="${data!=null? data.endDate:''}">
+            <input type="text" id="endDate" value="${data!=null? data.endDate:''}" placeholder="Sunday December 31st">
             </div>
             <div>
             <label>End Time</label>
-            <input type="text" id="endTime" value="${data!=null? data.endTime:''}">
+            <input type="text" id="endTime" value="${data!=null? data.endTime:''}" placeholder="00:00am">
             </div>
         </div>
         <div class="controlDiv"></div>

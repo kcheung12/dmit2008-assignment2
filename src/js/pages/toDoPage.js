@@ -1,7 +1,6 @@
 import logo from "../icon/logo";
 import header from "../components/header";
 import tagline from "../components/tagline";
-import link from "../components/link";
 import Router from "../routes/router";
 import addlogo from "../icon/addlogo";
 import todoList from "../components/todoList/todoList";

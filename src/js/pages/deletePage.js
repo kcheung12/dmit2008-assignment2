@@ -1,12 +1,15 @@
-import makeElement from "../utils/makeElement";
+import logo from "../icon/logo";
+import header from "../components/header";
+import tagline from "../components/tagline";
+import deleteItem from "../components/deleteItem";
 import button from "~/src/js/components/ui/button";
 import Router from "../routes/router";
 import reducer from "../redux/reducers";
 import { getStore } from "../redux/store";
+import bgColor from "../utils/bgColor";
 
 const deletePage = function(props){
 
-    const page = document.createElement('div')
     const cancelButton = button('Cancel')
     const deleteButton = button("delete","buttonWarning")
 
@@ -14,7 +17,7 @@ const deletePage = function(props){
         Router('/toDoPage')
     }
     function onDeleteEvent(e){
-        // action object required for the reducer
+
         const index = getStore().findIndex((cat)=>{
             return (cat.id === props.id)
         })
@@ -26,26 +29,38 @@ const deletePage = function(props){
                 Router('/toDoPage')
             }
         }
-        // pass the action object to the reducer
+
         reducer(action)
 
     }
-    //delete button event handler
+
     deleteButton.addEventListener('click', onDeleteEvent)
     cancelButton.addEventListener('click', onCancelDelete)
 
+    const page = document.createElement('div')
+    page.classList.add('toDoPage')
+    const pageHeader = document.createElement('header')
+    pageHeader.classList.add('toDoPage-header')
+    const logoElm = logo()
+    const h1 = header ('h1','Bingo')
+    const p = tagline('Time to play')
+    pageHeader.append(logoElm)
+    pageHeader.append(h1)
+    pageHeader.append(p)
+    page.append(pageHeader)
 
-    let headerTemplate = `    
-    <header class="welcome center-in-page">   
-    <h1>Delete Employee</h1>   
-    <p>delete employee with id</p>   
-    <div></div>   
-    </header>    
-    ` 
-    const pageHeader = makeElement(headerTemplate)
-    pageHeader.querySelector('div').append(cancelButton,deleteButton)
+    const main = document.createElement('main')
+    const h2 = header('h2','Delete To Do Item','editHeader')
+    const cat = getStore().find(cat => cat.id === props.id)
+    const element = deleteItem(bgColor(),cat)
+    const div = document.createElement('div')
+    div.append(cancelButton,deleteButton)
+    main.append(h2)
+    main.append(element)
+    main.append(div)
     
-    page.append(pageHeader)       
+    
+    page.append(main)       
     return page    
 }
     

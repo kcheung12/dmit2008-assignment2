@@ -2,24 +2,21 @@ import logo from "../icon/logo"
 import header from "../components/header"
 import tagline from "../components/tagline"
 import form from "../components/form"
-import { getStore } from "../redux/store"
 import button from "../components/ui/button/button"
 import Router from "../routes/router"
 import reducer from "../redux/reducers"
+import { keyGenerator } from "../utils/key"
 
 
 
-const editPage = function(props){
-    
+const addPage = function(props){
     function onCancelEdit(e){
         e.preventDefault();
         Router('/toDoPage')
     }
-    function onEditEvent(e){
+    function onAddEvent(e){
         e.preventDefault();
-        const index = getStore().findIndex((cat)=>{
-            return (cat.id === props.id)
-        })
+        
         const newCat = {
             id:editForm.querySelector('#id').value,
             category:editForm.querySelector('#cat').value,
@@ -30,10 +27,14 @@ const editPage = function(props){
             endDate:editForm.querySelector('#endDate').value,
             endTime:editForm.querySelector('#endTime').value
         }
+        if(newCat.id == '')
+        {
+            keyGenerator(newCat)
+        }
         
         const action = { 
-            type:"edit",
-            payload:{index,newCat},
+            type:"add",
+            payload:{newCat},
             cb: ()=>{
                 Router('/toDoPage')
             }
@@ -47,7 +48,7 @@ const editPage = function(props){
     const page = document.createElement('div')
     page.classList.add('toDoPage')
     const cancelButton = button('Cancel')
-    const editButton = button("Edit to do","editButton")
+    const addButton = button("Add to do","editButton")
     const pageHeader = document.createElement('header')
     pageHeader.classList.add('toDoPage-header')
     const logoElm = logo()
@@ -59,22 +60,14 @@ const editPage = function(props){
     page.append(pageHeader)
 
     const main = document.createElement('main')
-    const h2 = header('h2','Edit To Do Item','editHeader')
+    const h2 = header('h2','Add To Do Item','editHeader')
 
     const editForm = form(props)
-    const checkBox = editForm.querySelector('#isComplete') 
-    const catList = editForm.querySelector('#cat')
+    
 
-    if(props!=null){
-        if(props.isComplete !== false)
-            checkBox.checked = true
-        if(props.category !== null)
-            catList.value = props.category
-    }
-
-    editButton.addEventListener('click', onEditEvent)
+    addButton.addEventListener('click', onAddEvent)
     cancelButton.addEventListener('click', onCancelEdit)
-    editForm.querySelector('div.controlDiv').append(cancelButton,editButton)
+    editForm.querySelector('div.controlDiv').append(cancelButton,addButton)
     main.append(h2)
     main.append(editForm)
 
@@ -83,4 +76,4 @@ const editPage = function(props){
     return page
 }
 
-export default editPage
+export default addPage
