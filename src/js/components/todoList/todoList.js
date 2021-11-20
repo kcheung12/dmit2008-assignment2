@@ -5,21 +5,6 @@ import trashlogo from "../../icon/trashlogo";
 import { getStore } from "../../redux/store";
 import bgColor from "../../utils/bgColor";
 
-const onRequestNewPage = function(e){
-    e.preventDefault();
-    Router(e.currentTarget.dataset.path)
-}
-
-function onDeleteEvent (e){
-    // DELETE NEED THE ID
-    const id = {id:e.currentTarget.dataset.key}
-
-    // EDIT WOULD PASS EMPLOYEE OBJECT
-    Router('/delete', id)
-  }
-
-
-
 
 const todoList = function(){
 
@@ -27,9 +12,22 @@ const todoList = function(){
     content.classList.add('category-list')
 
     const data = getStore()
+
+    function onEditEvent (e){
+        const id = {id:e.currentTarget.dataset.key}
+        const cat = data.find(c=>c.id===id.id)
+        Router('/edit', cat)
+    }
+    
+    function onDeleteEvent (e){
+        // DELETE NEED THE ID
+        const id = {id:e.currentTarget.dataset.key}
+        // EDIT WOULD PASS EMPLOYEE OBJECT
+        Router('/delete', id)
+    }
     const elements = data.map(cat=>todoItem(bgColor(),editlogo,trashlogo, cat))
     elements.forEach(element => {
-        element.querySelector('button#edit-button').addEventListener('click',onRequestNewPage);
+        element.querySelector('button#edit-button').addEventListener('click',onEditEvent);
         element.querySelector('button#delete-button').addEventListener('click',onDeleteEvent);
         content.append(element);
     })   

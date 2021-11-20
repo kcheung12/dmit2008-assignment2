@@ -33,4 +33,15 @@
   border: 5px solid #dfdfdf;
   border-radius: 50px;
 }
+
+.editButton {
+  color: white;
+  border: none;
+  -webkit-box-shadow: 0 0 1px 1px rgba(39, 87, 105, 0.434);
+          box-shadow: 0 0 1px 1px rgba(39, 87, 105, 0.434);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: green;
+  margin: 1rem 0.25rem;
+}
 /*# sourceMappingURL=styles.module.css.map */

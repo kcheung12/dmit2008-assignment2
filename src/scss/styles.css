@@ -427,11 +427,19 @@ header {
   padding: 10rem 0;
 }
 
-.addbutton svg {
-  width: 5rem;
-  height: 5rem;
-  border: 5px solid #dfdfdf;
-  border-radius: 50px;
+.editHeader {
+  color: cornflowerblue;
+  font-size: 2rem;
+}
+
+button#delete-button {
+  background-color: white;
+  border: none;
+}
+
+button#edit-button {
+  background-color: white;
+  border: none;
 }
 
 .ui-link {

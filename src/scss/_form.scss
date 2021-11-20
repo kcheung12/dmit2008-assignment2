@@ -1,0 +1,25 @@
+form{
+    text-align: left;
+}
+
+input{
+    width: 100%;
+}
+
+label{
+    display: block;
+
+}
+
+.row{
+    display: flex; 
+    justify-content: space-between;  
+}
+
+input[type="checkbox"]{
+    text-align: center;
+}
+
+.checkboxDiv{
+    margin-right: 5rem;
+}
