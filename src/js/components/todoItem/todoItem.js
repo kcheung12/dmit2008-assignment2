@@ -1,6 +1,6 @@
 import makeElement from "../../utils/makeElement"
 
-const todoItem = function(color,edit,del,{id,category,title,endDate,isComplete}){
+const todoItem = function(color,edit,del,{id,category,title,startDate,endDate,startTime,endTime,isComplete}){
     const template = 
     `
     <div class="itemList">
@@ -9,7 +9,10 @@ const todoItem = function(color,edit,del,{id,category,title,endDate,isComplete})
             <ul class="list" data-key="${id}">
                 <li class="category" >${category}</li>
                 <li class="title" >${title}</li>
-                <li class="date" >${endDate}</li>
+                <li class="startdate" >Start date: ${startDate}</li>
+                <li class="enddate" >End  date: ${endDate}</li>
+                <li class="starttime" >Start time: ${startTime}</li>
+                <li class="endtime" >End  time: ${endTime}</li>
                 <li class="isComplete" >${isComplete? 'Completed' : '&nbsp;'}</li>
             </ul>
             <div class="function-div">

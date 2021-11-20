@@ -2,7 +2,7 @@
     {
         "id": "aw11f25v",
         "category": "children",
-        "title": "Between the age of 0 and 12",
+        "title": "Children Game One",
         "isComplete": true,
         "startDate": "Monday October 11th",
         "startTime":"9:00am",
@@ -12,7 +12,7 @@
     {
         "id": "p93oo2i1",
         "category": "teenagers",
-        "title": "Between the age of 13 and 17",
+        "title": "Teenagers Game One",
         "isComplete": true,
         "startDate": "Tuesday October 12th",
         "startTime":"9:00am",
@@ -21,7 +21,7 @@
     },
     {
         "id": "s86r32te",
-        "category": "adults",
+        "category": "Adults Competition",
         "title": "Between the age of 18 and 39",
         "isComplete": false,
         "startDate": "Wednesday October 13th",
@@ -32,7 +32,7 @@
     {
         "id": "a8sze5d7",
         "category": "middle-aged adults",
-        "title": "Between the age of 40 and 59",
+        "title": "Lucky One",
         "isComplete": false,
         "startDate": "Thursday October 14th",
         "startTime":"9:00am",
@@ -42,7 +42,7 @@
     {
         "id": "h69sd52s",
         "category": "seniors",
-        "title": "The age over 60",
+        "title": "Senior Group Game",
         "isComplete": false,
         "startDate": "Friday October 15th",
         "startTime":"9:00am",

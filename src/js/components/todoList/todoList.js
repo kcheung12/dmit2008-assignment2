@@ -20,9 +20,9 @@ const todoList = function(){
     }
     
     function onDeleteEvent (e){
-        // DELETE NEED THE ID
+
         const id = {id:e.currentTarget.dataset.key}
-        // EDIT WOULD PASS EMPLOYEE OBJECT
+
         Router('/delete', id)
     }
     const elements = data.map(cat=>todoItem(bgColor(),editlogo,trashlogo, cat))
